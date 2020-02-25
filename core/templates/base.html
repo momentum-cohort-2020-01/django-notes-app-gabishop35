@@ -1,7 +1,13 @@
-<h3>This is my HOMPAGE!!!</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>Notes</title>{% endblock %}
+    <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta.25/shoelace.css">
 
-{% for note in notes.values %}
-
-<h4>{{note.title}}</h4>
-
-{% endfor %}
+</head>
+<body>
+    {% block content %} {% endblock %}
+</body>
+</html>
