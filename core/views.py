@@ -3,6 +3,7 @@ from django.http import HttpRequest
 
 from .models import Note
 from .forms import NoteForm
+# from .forms import
 
 
 # Create your views here.
@@ -40,3 +41,8 @@ def notes_edit(request, pk):
     else:
         form = NoteForm(instance=note)
     return render(request, 'core/notes_edit.html', {'form': form})
+
+def notes_delete(request, pk):
+    note = get_object_or_404(Note, pk=pk)
+    note.delete()
+    return redirect('notes-list')

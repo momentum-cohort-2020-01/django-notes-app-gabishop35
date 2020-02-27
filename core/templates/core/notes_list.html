@@ -7,6 +7,8 @@
         </th>
         </tr>
     </thead>
+    <a href="{% url 'notes-new' %}" class = "button">Add New Note</a>
+
 <tbody>
     {% for note in notes %}
     <tr><td><a href="{% url 'notes-detail' note.pk %}">{{note.title}}</a></td><td>{{note.body}}</td></tr>

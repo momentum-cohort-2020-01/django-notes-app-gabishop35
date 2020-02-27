@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 <dl><dt>{{note.title}}</dt><dd>{{note.body}}</dd></dl>
-<a class="button" href="{% url 'notes-edit' pk=note.pk %}"></a>
+<a class="button" href="{% url 'notes-edit' pk=note.pk %}">Edit</a>
+<a class="delete button" href="{% url 'notes-delete' note.pk %}">Delete</a>
 <footer>
     <p>Created: {{note.created_at}}</p>
     <p>Updated: {{note.updated_at}}</p>
